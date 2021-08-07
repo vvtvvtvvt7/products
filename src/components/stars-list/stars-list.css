@@ -1,0 +1,59 @@
+.stars {
+  position: relative;
+  display: flex;
+  padding-right: 90px;
+  padding-left: 90px;
+  padding-top: 100px;
+  padding-bottom: 80px;
+  background-color: #ffeead;
+  background-image: url("../../assets/images/stars-image.svg");
+  background-position: left bottom;
+  background-size: 449px 304px;
+  background-repeat: no-repeat;
+  flex-direction: column;
+  align-items: center;
+  overflow: hidden;
+}
+
+.stars::before {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  width: 213px;
+  height: 170px;
+  content: "";
+  background-image: url("../../assets/images/stars-left.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.stars::after {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 111px;
+  height: 158px;
+  content: "";
+  background-image: url("../../assets/images/stars-right.svg");
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.stars__list {
+  margin-top: 64px;
+  margin-bottom: 44px;
+  padding: 0;
+}
+
+.stars__list li {
+  list-style: none;
+}
+
+.stars_item {
+  float: left;
+  margin-left: 20px;
+}
+
+.stars_item:first-child {
+  margin-left: 0;
+}
