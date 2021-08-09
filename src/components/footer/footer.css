@@ -9,13 +9,6 @@
 }
 
 .footer__right {
-  height: 43px;
-  width: 148px;
-  padding: 8px 12px;
   font-size: 18px;
   line-height: 43px;
-  background-color: #fff6d9;
-  border-radius: 5px;
-  vertical-align: middle;
-  text-align: center;
 }

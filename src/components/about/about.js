@@ -2,17 +2,16 @@ import React from 'react';
 import Title, { TitleLevel, TitleSize } from '../title/title';
 import './about.css';
 
-// Раздел о котокафе
+// Раздел о магазине фермерских продуктов
 function About() {
   return (
     <section className="about">
       <div className="about__wrapper">
-        <Title level={TitleLevel.H1} size={TitleSize.BIG}> Первое в России котокафе</Title>
-        <p className="about__text">Крупнейшее котокафе России, в отором живёт 50 кошек и котов,
-                и каждый из них ищет новый дом. Животных можно гладить, фотографировать, играть с ними.
+        <Title level={TitleLevel.H1} size={TitleSize.BIG}> Магазин фермерских продуктов с доставкой</Title>
+        <p className="about__text">Все продукты изготавливаются под заказ.
+          Фермеры начинают готовить продукты за день до отправки заказа клиентам.
+          Именно поэтому мы принимаем заказы заранее и доставляем продукты максимально свежими.
         </p>
-        <p className="about__time">Рабочее время с 8:00 до 23:00</p>
-        <p className="about__address">Санкт-Петербург, Большая Конюшенная улица, 27</p>
       </div>
     </section>
   );

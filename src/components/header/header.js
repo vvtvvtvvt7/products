@@ -8,7 +8,7 @@ function Header() {
   return (
     <header className="header">
       <Logo />
-      <Button width={260}>Купить билет</Button>
+      <Button width={260}>Купить</Button>
     </header>
   );
 }
