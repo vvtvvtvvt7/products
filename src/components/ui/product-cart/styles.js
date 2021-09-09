@@ -1,6 +1,5 @@
 import styled from 'styled-components';
 import { Img } from 'src/components/styled';
-import Panel from 'src/components/ui/panel/panel';
 import Title from 'src/components/ui/title/title';
 
 export const ProductImage = styled(Img)`
@@ -11,13 +10,11 @@ export const ProductImage = styled(Img)`
 
 export const ContentWrapper = styled.div`
   position: relative;
-  min-height: 200px;
   padding-bottom: 30px;
   box-sizing: border-box;
-`;
-
-export const ProductPanel = styled(Panel)`
-  display: flex;
+  float: right;
+  width: 417px;
+  min-height: 248px;
 `;
 
 export const ProductTitle = styled(Title)`
