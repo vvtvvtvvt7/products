@@ -2,7 +2,8 @@ import React from 'react';
 import Tabs from 'src/components/ui/tabs/tabs';
 import { TitleSize } from 'src/components/ui/title/title';
 import OptionsList from 'src/components/ui/options-list/options-list';
-import {ProductImage, ProductPanel, ProductTitle, Price, ContentWrapper } from './styles';
+import Panel from 'src/components/ui/panel/panel';
+import {ProductImage, ProductTitle, Price, ContentWrapper } from './styles';
 
 function ProductCart({product}) {
   const tabsList = [
@@ -20,7 +21,7 @@ function ProductCart({product}) {
     },
   ];
   return (
-    <ProductPanel>
+    <Panel>
       <ProductImage src={product.image} />
       <ContentWrapper>
         <ProductTitle as="h3" size={TitleSize.SMALL}>{product.name}</ProductTitle>
@@ -31,7 +32,7 @@ function ProductCart({product}) {
         <Price>{product.price} руб. / {product.weight} гр.</Price>
       </ContentWrapper>
 
-    </ProductPanel>
+    </Panel>
   );
 }
 
