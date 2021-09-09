@@ -13,7 +13,7 @@ import {
   AddressInput,
   PriceLabel,
   PriceValue
-} from './styled';
+} from './styles';
 import { SwiperSlide } from 'swiper/react';
 import SwiperCore, {
   Pagination,
@@ -30,6 +30,7 @@ function Order({
   const [swiperRef, setSwiperRef] = useState(null);
   const [selectProductIds, setSelectProductIds] = useState([]);
   const [address, setAddress] = useState('');
+  const [firstSelectIsCome, setFirstSelectIsCome] = useState(false);
 
   const buttonIsDisabled = !(selectProductIds.length && address);
   //id в продукты
@@ -54,7 +55,7 @@ function Order({
   return products && products.length ? (
     <StyledOrder as="form">
       <LeftColumn>
-        <Panel marginBottom={20}>
+        <Panel marginBottom={20} paddingTop={24} paddingBottom={10}>
           <Title as="h2" size={TitleSize.EXTRA_SMALL} marginBottom={12}>Выберите продукты</Title>
           <CheckboxList
             labelComponent={CheckboxLabel}
@@ -68,7 +69,12 @@ function Order({
                 }))}
             selectValues={selectProductIds}
             onClickLabel={handleOnClickProduct}
-            onChange={(productIds) => setSelectProductIds(productIds)}
+            onChange={(productIds) => {
+              if (!firstSelectIsCome) {
+                setFirstSelectIsCome(true)
+              }
+              setSelectProductIds(productIds);
+            }}
           />
         </Panel>
         <Panel>
@@ -85,12 +91,12 @@ function Order({
       </LeftColumn>
       <ProductSwiper
         onSwiper={setSwiperRef}
-        spaceBetween={20}
+        spaceBetween={12}
         direction="vertical"
         slidesPerView="auto"
         mousewheel
         loop
-        centeredSlides
+        centeredSlides={firstSelectIsCome}
         pagination={{
           type: 'fraction',
         }}

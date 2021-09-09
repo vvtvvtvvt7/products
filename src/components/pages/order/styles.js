@@ -21,6 +21,7 @@ export const StyledOrder = styled(Section)`
   top: ${(props) => props.theme.headerHeight};
   bottom: ${(props) => props.theme.footerHeight};
   max-width: ${(props) => props.theme.pageWidth};
+  overflow-y: overlay;
 `;
 
 export const ProductSwiper = styled(Swiper)`

@@ -19,10 +19,11 @@ export const Image = styled(Img)`
 export const Header = styled.header`
   display: flex;
   margin-bottom: ${(props)=> props.theme.indent};
+  text-align: left;
 `;
 
 export const Owner = styled.span`
-  float: left;
+  display: inline-block;
   height: 25px;
   margin-bottom: 4px;
   margin-left: ${(props) => props.indent};

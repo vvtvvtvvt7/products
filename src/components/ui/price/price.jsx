@@ -1,5 +1,5 @@
 import React from 'react';
-import { StyledPrice } from './styled';
+import { StyledPrice } from './styles';
 
 const formatPrice = (value) => {
   const roundedPrice = Math.round(value);

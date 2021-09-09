@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 
 export const StyledLogo = styled(Link)`
   display: flex;
+  margin-left: -4px;
   height: 44px;
   align-items: center;
   text-decoration: none;

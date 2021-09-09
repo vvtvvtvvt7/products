@@ -10,6 +10,10 @@ export const GlobalStyle = createGlobalStyle`
     margin: 0;
   }
 
+  html {
+    margin-left: calc(100vw - 100%);
+  }
+
   body {
     position: relative;
     min-height: 100%;

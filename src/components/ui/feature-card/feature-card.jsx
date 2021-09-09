@@ -1,6 +1,6 @@
 import React from 'react';
 import Title, { TitleSize } from '../title/title';
-import { Feature, Image, Owner, Header, Text } from './styled';
+import { Feature, Image, Owner, Header, Text } from './styles';
 
 // Карточка кота
 function FeatureCard({

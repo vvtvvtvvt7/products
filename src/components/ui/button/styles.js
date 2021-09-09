@@ -21,6 +21,7 @@ export const StyledButton = styled(Link)`
   cursor: pointer;
   transition: background-color  0.2s ease-out, box-shadow 0.2s ease-out;
   box-sizing: border-box;
+  font-family: ${(props) => props.theme.fontFamily};
 
   &:hover,
   &:active {
