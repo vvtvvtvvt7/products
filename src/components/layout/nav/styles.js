@@ -31,9 +31,9 @@ export const StyledButton = styled(Button)`
   &:active {
     background-color: ${(props)=> props.theme.colorWhite};
 
-     &::after {
+    &::after {
       opacity: 1;
-     }
+    }
   }
 
   &:hover {

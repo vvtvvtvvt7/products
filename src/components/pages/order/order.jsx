@@ -71,7 +71,7 @@ function Order({
             onClickLabel={handleOnClickProduct}
             onChange={(productIds) => {
               if (!firstSelectIsCome) {
-                setFirstSelectIsCome(true)
+                setFirstSelectIsCome(true);
               }
               setSelectProductIds(productIds);
             }}
