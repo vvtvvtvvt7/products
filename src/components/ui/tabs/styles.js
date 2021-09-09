@@ -9,6 +9,7 @@ export const TabButton = styled(Button)`
   font-size: 14px;
   line-height: 1.5;
   margin-right: 8px;
+  font-weight: 400;
   ${(props) => props.$isSelect ? css`
    background-color: ${props.theme.panelBackgroundColor};
    border: 1px solid rgba(0, 0, 0, 0.1);

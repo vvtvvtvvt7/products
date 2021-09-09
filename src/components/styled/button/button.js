@@ -8,6 +8,8 @@ export const Button = styled.button`
   background-image: none;
   box-shadow: none;
   cursor: pointer;
+  outline: none;
+  font-family: ${(props) => props.theme.fontFamily};
 `;
 
 export default Button;

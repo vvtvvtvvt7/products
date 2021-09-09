@@ -2,7 +2,7 @@ import React from 'react';
 import Tabs from 'src/components/ui/tabs/tabs';
 import { TitleSize } from 'src/components/ui/title/title';
 import OptionsList from 'src/components/ui/options-list/options-list';
-import {ProductImage, ProductPanel, ProductTitle, Price, ContentWrapper } from './styled';
+import {ProductImage, ProductPanel, ProductTitle, Price, ContentWrapper } from './styles';
 
 function ProductCart({product}) {
   const tabsList = [

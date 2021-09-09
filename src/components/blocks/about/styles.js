@@ -4,7 +4,7 @@ import aboutImage from 'src/assets/images/about.svg';
 
 export const StyledAbout = styled(Section)`
   position: relative;
-  padding-top: 180px;
+  padding-top: 183px;
   padding-bottom: 145px;
   padding-right: 553px;
   background-color: ${(props) => props.theme.backgroundColorBlue};

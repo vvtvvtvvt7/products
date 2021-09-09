@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {TabButton, Header, Content} from './styled';
+import {TabButton, Header, Content} from './styles';
 
 // Логотип сайта с названием
 function Tabs ({tabsList = [], maxContentHeiht}) {
