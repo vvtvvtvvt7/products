@@ -31,7 +31,6 @@ function Order({
   const [address, setAddress] = useState('');
   const [firstSelectIsCome, setFirstSelectIsCome] = useState(false);
 
-  const buttonIsDisabled = !(selectProductIds.length && address);
   //id в продукты
   const selectProducts = selectProductIds
     .map((id) => products
@@ -47,8 +46,10 @@ function Order({
   };
 
   // при клике на чекбокс с названием продукта
-  const handleOnClickProduct = (index) => {
-    swiperRef.slideTo(products.length + index, 0);
+  const handleOnClickProduct = (value, index) => {
+    if (!selectProductIds.includes(value)) {
+      swiperRef.slideTo(products.length + index, 0);
+    }
   };
 
   const handleChangeSelectProducts = (productIds) => {
@@ -79,7 +80,7 @@ function Order({
           />
         </Panel>
         <Panel>
-          <Title as="h1" size={TitleSize.EXTRA_SMALL} marginBottom={24}>Сделать заказ</Title>
+          <Title size={TitleSize.EXTRA_SMALL} marginBottom={24}>Сделать заказ</Title>
           <AddressInput
             value={address}
             onChange={(e) => setAddress(e.target.value)}
@@ -87,7 +88,7 @@ function Order({
           />
           <PriceLabel as="span">Цена</PriceLabel>
           <PriceValue value={fullPrice} />
-          <Button maxWidth onClick={handleBuyClick} disabled={buttonIsDisabled}>Купить</Button>
+          <Button maxWidth onClick={handleBuyClick} disabled={!(selectProductIds.length && address)}>Купить</Button>
         </Panel>
       </LeftColumn>
       <ProductSwiper

@@ -5,7 +5,7 @@ import { Label, VisuallyHiddenInput } from 'src/components/styled';
 function Checkbox({
   onClick,
   labelComponent, // Компонент для отображения label
-  selectValues, // выбранное значения
+  isChecked, // выбранно ли значение
   name, // имя
   value, // значение
   text, // текст элемента
@@ -13,7 +13,6 @@ function Checkbox({
   ...props
 }) {
   const LabelComponent = labelComponent;
-  const isChecked = selectValues.includes(value);
 
   return (
     <Label>
@@ -25,7 +24,7 @@ function Checkbox({
         {...props}
         type="checkbox"
       />
-      <LabelComponent onClick={() => onClick()} $isChecked={isChecked}>{text}</LabelComponent>
+      <LabelComponent onClick={() => onClick(value)} $isChecked={isChecked}>{text}</LabelComponent>
     </Label>
   );
 
