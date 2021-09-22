@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import {TabButton, Header, Content} from './styles';
+import { TabButton, Header, Content, TabListItem } from './styles';
 
 // Логотип сайта с названием
 function Tabs ({tabsList = [], maxContentHeiht}) {
@@ -9,18 +9,19 @@ function Tabs ({tabsList = [], maxContentHeiht}) {
     <div>
       <Header>
         {tabsList.map((tab, index) => (
-          <TabButton
-            key={`tab${index * 10}`}
-            $isSelect={selectIndex === index}
-            {...selectIndex === index
-              ? {as: 'span'}
-              : {onClick: ()=> {
-                setSelectIndex(index);
-              },
+          <TabListItem key={`tab${index * 10}`}>
+            <TabButton
+              $isSelect={selectIndex === index}
+              {...selectIndex === index
+                ? {as: 'span'}
+                : {onClick: () => {
+                  setSelectIndex(index);
+                },
+                }
               }
-            }
-          >{tab.title}
-          </TabButton>
+            >{tab.title}
+            </TabButton>
+          </TabListItem>
         ))}
       </Header>
       <Content $maxContentHeiht={maxContentHeiht}>{tabsList[selectIndex].content}</Content>

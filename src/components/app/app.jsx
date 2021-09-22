@@ -1,13 +1,13 @@
 import React from 'react';
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import MainPage from 'src/components/pages/main-page/main-page';
-import { AppRoute } from 'src/const';
 import ScrollTop from 'src/components/ui/scroll-top/scroll-top';
 import PageWrapper from 'src/components/layout/page-wrapper/page-wrapper';
-import { GlobalStyle } from './styles';
+import Order from 'src/components/pages/order/order';
+import { AppRoute } from 'src/const';
 import features from 'src/mocks/features';
 import products from 'src/mocks/products';
-import Order from 'src/components/pages/order/order';
+import { GlobalStyle } from './styles';
 
 // Корневой компонент всего приложения
 function App() {

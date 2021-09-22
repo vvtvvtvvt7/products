@@ -19,7 +19,7 @@ export const StyledLogo = styled(Link)`
 
 export const Text = styled.span`
   display: flex;
-  height: 44px;
+  min-height: 44px;
   margin-left: 25px;
   font-weight: bold;
   font-size: 28px;

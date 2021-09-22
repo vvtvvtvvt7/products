@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
-
+import { SwiperSlide } from 'swiper/react';
+import SwiperCore, {
+  Pagination,
+  Mousewheel
+} from 'swiper';
 import Panel from 'src/components/ui/panel/panel';
 import Title, { TitleSize } from 'src/components/ui/title/title';
 import CheckboxList from 'src/components/ui/checkboxList/checkboxList';
@@ -14,11 +18,6 @@ import {
   PriceLabel,
   PriceValue
 } from './styles';
-import { SwiperSlide } from 'swiper/react';
-import SwiperCore, {
-  Pagination,
-  Mousewheel
-} from 'swiper';
 import 'swiper/css';
 
 SwiperCore.use([Mousewheel, Pagination]);
@@ -49,7 +48,14 @@ function Order({
 
   // при клике на чекбокс с названием продукта
   const handleOnClickProduct = (index) => {
-    swiperRef.slideTo(index, 0);
+    swiperRef.slideTo(products.length + index, 0);
+  };
+
+  const handleChangeSelectProducts = (productIds) => {
+    if (!firstSelectIsCome) {
+      setFirstSelectIsCome(true);
+    }
+    setSelectProductIds(productIds);
   };
 
   return products && products.length ? (
@@ -69,12 +75,7 @@ function Order({
                 }))}
             selectValues={selectProductIds}
             onClickLabel={handleOnClickProduct}
-            onChange={(productIds) => {
-              if (!firstSelectIsCome) {
-                setFirstSelectIsCome(true);
-              }
-              setSelectProductIds(productIds);
-            }}
+            onChange={handleChangeSelectProducts}
           />
         </Panel>
         <Panel>
@@ -84,7 +85,7 @@ function Order({
             onChange={(e) => setAddress(e.target.value)}
             placeholder="Введите адрес доставки"
           />
-          <PriceLabel>Цена</PriceLabel>
+          <PriceLabel as="span">Цена</PriceLabel>
           <PriceValue value={fullPrice} />
           <Button maxWidth onClick={handleBuyClick} disabled={buttonIsDisabled}>Купить</Button>
         </Panel>

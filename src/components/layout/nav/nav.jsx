@@ -1,11 +1,12 @@
 import React from 'react';
 import Button from 'src/components/ui/button/button';
+import {Ul, Li} from 'src/components/styled';
 import { AppRoute } from 'src/const';
 import { StyledButton } from './styles';
 
-const buttons = [
-  {to: AppRoute.MAIN, button: (<StyledButton key={AppRoute.MAIN} link={AppRoute.MAIN}>Главная</StyledButton>)},
-  {to: AppRoute.ORDER, button: (<Button key={AppRoute.ORDER} link={AppRoute.ORDER}>Купить</Button>)},
+const links = [
+  {to: AppRoute.MAIN, item: (<StyledButton link={AppRoute.MAIN}>Главная</StyledButton>)},
+  {to: AppRoute.ORDER, item: (<Button link={AppRoute.ORDER}>Купить</Button>)},
 ];
 
 // навигация
@@ -14,9 +15,11 @@ function Nav({
 }) {
   return (
     <nav>
-      {buttons
-        .filter((button) => button.to !== pageUrl)
-        .map((button) => button.button )}
+      <Ul>
+        {links
+          .filter((link) => link.to !== pageUrl)
+          .map((link) => (<Li key={link.to}>{link.item}</Li>) )}
+      </Ul>
     </nav>
   );
 }

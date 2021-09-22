@@ -6,7 +6,7 @@ import { Main } from './styles';
 // Обёртка для контента страниц
 function PageWrapper({
   pageUrl, // навигация для шапки
-  children, // навигация
+  children, // контент страницы
 }) {
   return (
     <>
