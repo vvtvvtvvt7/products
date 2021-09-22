@@ -4,8 +4,8 @@ import { Section } from 'src/components/styled';
 export const StyledSection = styled(Section)`
   position: relative;
   width: ${(props) => props.theme.pageWidth};
-  margin: 0 auto;
   height: 80px;
+  margin: 0 auto;
   padding-top: 0;
   padding-bottom: 0;
   justify-content: space-between;

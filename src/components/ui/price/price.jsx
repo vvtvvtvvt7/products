@@ -6,7 +6,7 @@ const formatPrice = (value) => {
   return (roundedPrice.toString()).replace(/(\d)(?=(\d\d\d)+$)/, '$1 ');
 };
 
-// Отмформатированная цена
+// Отформатированная цена
 function Price ({value, className}) {
 
   return (

@@ -24,7 +24,7 @@ export const Header = styled.header`
 
 export const Owner = styled.span`
   display: inline-block;
-  height: 25px;
+  min-height: 25px;
   margin-bottom: 4px;
   margin-left: ${(props) => props.indent};
   padding-left: 10px;

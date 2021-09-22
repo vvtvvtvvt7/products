@@ -3,10 +3,10 @@ import Button from 'src/components/ui/button/button';
 
 export const StyledButton = styled(Button)`
   position: relative;
+  display: inline-block;
   padding: 0;
   width: auto;
   min-width: 0;
-  display: inline-block;
   background-color: ${(props)=> props.theme.colorWhite};
   color: ${(props)=> props.theme.fontColorBlack};
   font-size: 18px;
@@ -16,7 +16,6 @@ export const StyledButton = styled(Button)`
   padding-bottom: 21px;
 
   &::after {
-    content: "";
     position: absolute;
     left: 0;
     right: 0;
@@ -25,6 +24,7 @@ export const StyledButton = styled(Button)`
     background-color: ${(props)=> props.theme.fontColorBlack};
     opacity: 0;
     transition: opacity  0.2s ease-out;
+    content: "";
   }
 
   &:hover,

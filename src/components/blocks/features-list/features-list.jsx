@@ -1,12 +1,12 @@
 import React from 'react';
-import { AppRoute } from '/src/const';
 import FeatureCard from '../../ui/feature-card/feature-card';
 import { Ul, Li } from 'src/components/styled';
-import {Features, StyledButton, StyledTitle} from './styles';
+import { AppRoute } from '/src/const';
+import { Features, StyledButton, StyledTitle } from './styles';
 
-// список преимучеств
+// список преимуществ
 function FeaturesList({
-  features, // преимучества
+  features, // преимущества - массив объектов с id, title, owner, isNegative, image, about
 }) {
   return features && features.length ? (
     <Features>

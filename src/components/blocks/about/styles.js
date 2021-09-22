@@ -4,6 +4,7 @@ import aboutImage from 'src/assets/images/about.svg';
 
 export const StyledAbout = styled(Section)`
   position: relative;
+  min-height: 550px;
   padding-top: 183px;
   padding-bottom: 145px;
   padding-right: 553px;
@@ -11,7 +12,6 @@ export const StyledAbout = styled(Section)`
   align-items: center;
   z-index: 1;
   flex-direction: column;
-  min-height: 550px;
 
   &::after {
     position: absolute;

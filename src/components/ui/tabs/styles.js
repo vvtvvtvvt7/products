@@ -1,5 +1,13 @@
 import styled, { css } from 'styled-components';
-import { Button } from 'src/components/styled';
+import { Button, Ul, Li } from 'src/components/styled';
+
+export const TabListItem = styled(Li)`
+  margin-right: 8px;
+
+  &:last-child {
+    margin-right: 0;
+  }
+`;
 
 export const TabButton = styled(Button)`
   padding-left: 12px;
@@ -8,7 +16,6 @@ export const TabButton = styled(Button)`
   padding-bottom: 8px;
   font-size: 14px;
   line-height: 1.5;
-  margin-right: 8px;
   font-weight: 400;
   ${(props) => props.$isSelect ? css`
    background-color: ${props.theme.panelBackgroundColor};
@@ -19,13 +26,9 @@ export const TabButton = styled(Button)`
    border: 1px solid rgba(0, 0, 0, 0.1);
    color: ${props.theme.fontColorBlack};
   ` }
-
-  &:last-child {
-    margin-right: 0;
-  }
 `;
 
-export const Header = styled.div`
+export const Header = styled(Ul)`
   display: flex;
   margin-bottom: 16px;
 `;

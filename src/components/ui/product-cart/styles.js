@@ -10,11 +10,11 @@ export const ProductImage = styled(Img)`
 
 export const ContentWrapper = styled.div`
   position: relative;
-  padding-bottom: 30px;
-  box-sizing: border-box;
   float: right;
   width: 417px;
   min-height: 248px;
+  padding-bottom: 30px;
+  box-sizing: border-box;
 `;
 
 export const ProductTitle = styled(Title)`
@@ -24,10 +24,10 @@ export const ProductTitle = styled(Title)`
 export const Price = styled.span`
   position: absolute;
   bottom: 0;
+  display: inline-block;
   padding: 4px 8px;
-  background-color: ${(props) => props.theme.backgroundColorBlue};
   font-size: 14px;
   font-weight: bold;
   line-height: 21px;
-  display: inline-block;
+  background-color: ${(props) => props.theme.backgroundColorBlue};
 `;
