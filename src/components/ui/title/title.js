@@ -39,7 +39,6 @@ export const Title = styled.h1 `
       line-height: ${values.lineHeight};
     `;
   }};
-
 `;
 
 export default Title;
