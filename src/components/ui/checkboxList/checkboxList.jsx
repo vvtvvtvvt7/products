@@ -31,6 +31,7 @@ function CheckboxList({
           <Checkbox
             labelComponent={labelComponent}
             selectValues={selectValues}
+            isChecked={selectValues.includes(option.value)}
             name={name}
             value={option.value}
             text={option.title}
