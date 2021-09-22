@@ -34,7 +34,7 @@ function CheckboxList({
             name={name}
             value={option.value}
             text={option.title}
-            onClick={() => onClickLabel(index)}
+            onClick={(value) => onClickLabel(value, index)}
             onChange={handleChange}
           />
         </Li>

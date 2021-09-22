@@ -25,7 +25,7 @@ function Checkbox({
         {...props}
         type="checkbox"
       />
-      <LabelComponent onClick={() => onClick()} $isChecked={isChecked}>{text}</LabelComponent>
+      <LabelComponent onClick={() => onClick(value)} $isChecked={isChecked}>{text}</LabelComponent>
     </Label>
   );
 
