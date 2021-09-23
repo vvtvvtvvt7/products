@@ -13,6 +13,7 @@ export const Features = styled(Section)`
 
 export const StyledTitle = styled(Title)`
   margin-bottom: 64px;
+  text-align: center;
 `;
 
 export const StyledButton = styled(Button)`

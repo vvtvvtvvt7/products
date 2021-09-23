@@ -2,7 +2,8 @@ import React, { useState } from 'react';
 import { SwiperSlide } from 'swiper/react';
 import SwiperCore, {
   Pagination,
-  Mousewheel
+  Mousewheel,
+  Scrollbar
 } from 'swiper';
 import Panel from 'src/components/ui/panel/panel';
 import Title, { TitleSize } from 'src/components/ui/title/title';
@@ -19,8 +20,9 @@ import {
   PriceValue
 } from './styles';
 import 'swiper/css';
+import 'swiper/css/scrollbar';
 
-SwiperCore.use([Mousewheel, Pagination]);
+SwiperCore.use([Mousewheel, Pagination, Scrollbar]);
 
 // Оформление заказа
 function Order({
@@ -29,7 +31,6 @@ function Order({
   const [swiperRef, setSwiperRef] = useState(null);
   const [selectProductIds, setSelectProductIds] = useState([]);
   const [address, setAddress] = useState('');
-  const [firstSelectIsCome, setFirstSelectIsCome] = useState(false);
 
   //id в продукты
   const selectProducts = selectProductIds
@@ -48,14 +49,11 @@ function Order({
   // при клике на чекбокс с названием продукта
   const handleOnClickProduct = (value, index) => {
     if (!selectProductIds.includes(value)) {
-      swiperRef.slideTo(products.length + index, 0);
+      swiperRef.slideTo(index, 0);
     }
   };
 
   const handleChangeSelectProducts = (productIds) => {
-    if (!firstSelectIsCome) {
-      setFirstSelectIsCome(true);
-    }
     setSelectProductIds(productIds);
   };
 
@@ -96,9 +94,8 @@ function Order({
         spaceBetween={12}
         direction="vertical"
         slidesPerView="auto"
+        scrollbar={{draggable: true}}
         mousewheel
-        loop
-        centeredSlides={firstSelectIsCome}
         pagination={{
           type: 'fraction',
         }}
